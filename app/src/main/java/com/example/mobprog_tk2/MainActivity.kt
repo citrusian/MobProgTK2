@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        // Redirect to LoginFragment after KeyStore init
+        // Redirect to LoginFragment
         val loginFragment = LoginFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, loginFragment)

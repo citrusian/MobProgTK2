@@ -122,8 +122,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {
-//        val appContext = context?.applicationContext ?: return
-//        Toast.makeText(appContext, errorString, Toast.LENGTH_LONG).show()
         val appContext = context?.applicationContext ?: return
         val toast = Toast.makeText(appContext, errorString, Toast.LENGTH_LONG)
         val xOffset = 0 // Horizontal offset
