@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.mobprog_tk2.MainActivity
 import com.example.mobprog_tk2.databinding.FragmentLoginBinding
 
 import com.example.mobprog_tk2.R
@@ -74,6 +75,12 @@ class LoginFragment : Fragment() {
                 }
                 loginResult.success?.let {
                     // updateUiWithUser(it)
+
+                    // Set Logout visibility
+                    val mainActivity = requireActivity() as MainActivity
+                    val logoutButton = mainActivity.findViewById<Button>(R.id.LogoutButton)
+                    logoutButton.visibility = View.VISIBLE
+
                     // Redirect to galleryFragment
                     val targetFragment = GalleryFragment()
                     requireActivity().supportFragmentManager.beginTransaction()

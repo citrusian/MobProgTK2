@@ -40,19 +40,7 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
         }
     }
 
-    // A placeholder username validation check
-//    private fun isUserNameValid(username: String): Boolean {
-//        val specialCharacters = arrayOf("@", "#", "$", "%", "^", "&")
-//        return if (specialCharacters.any { it in username }) {
-//            Patterns.EMAIL_ADDRESS.matcher(username).matches()
-//        } else {
-//            username.isNotBlank()
-//        }
-//    }
-
-
     // Username Validation
-    // Regex Test
     private fun isUserNameValid(username: String): Boolean {
 //        val specialCharacters = [^aA-zZ]
 //        val specialCharacters = intArrayOf("^", "a"-"z")
