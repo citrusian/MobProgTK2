@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mobprog_tk2.ImageAdapter
 import com.example.mobprog_tk2.MainActivity
 import com.example.mobprog_tk2.R
 import com.example.mobprog_tk2.data.LoginDataSource
@@ -18,21 +20,25 @@ import com.example.mobprog_tk2.data.LoginRepository
 class GalleryFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var imageList: List<Int>
+    private lateinit var imageAdapter: ImageAdapter
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val mainActivity = requireActivity() as MainActivity
-        val logoutButton = mainActivity.findViewById<Button>(R.id.LogoutButton)
-        logoutButton.setOnClickListener {
+        val view = inflater.inflate(R.layout.fragment_gallery, container, false)
 
-            // Redirect to MainActivity to Simulate Logout
-//            LoginRepository.logout()
-            val intent = Intent(requireActivity(), MainActivity::class.java)
-            startActivity(intent)
-        }
+        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext()) // Set the layout manager
+        // List of drawable
+        imageList = listOf(
+            R.drawable.ic_launcher_background,
+            R.drawable.welcome_heart_green,
+            R.drawable.ic_launcher_background
+        )
+        imageAdapter = ImageAdapter(imageList)
+        recyclerView.adapter = imageAdapter
 
-        return inflater.inflate(R.layout.fragment_gallery, container, false)
+        return view
     }
 }

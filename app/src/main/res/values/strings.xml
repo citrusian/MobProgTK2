@@ -100,4 +100,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="logout">Logout</string>
+    <string name="placeholder">placeholder</string>
 </resources>
