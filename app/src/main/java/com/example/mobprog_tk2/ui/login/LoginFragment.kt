@@ -73,7 +73,12 @@ class LoginFragment : Fragment() {
                     showLoginFailed(it)
                 }
                 loginResult.success?.let {
-                    updateUiWithUser(it)
+                    // updateUiWithUser(it)
+                    // Redirect to galleryFragment
+                    val targetFragment = GalleryFragment()
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, targetFragment)
+                        .commit()
                 }
             })
 

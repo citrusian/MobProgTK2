@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
 
 
         // Redirect to LoginFragment
-        val loginFragment = LoginFragment()
+        val targetFragment = LoginFragment()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, loginFragment)
+            .replace(R.id.fragment_container, targetFragment)
             .commit()
     }
 }
