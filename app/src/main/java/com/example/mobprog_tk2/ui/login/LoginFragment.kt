@@ -1,9 +1,5 @@
 package com.example.mobprog_tk2.ui.login
 
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.annotation.StringRes
-import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,14 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.mobprog_tk2.MainActivity
-import com.example.mobprog_tk2.databinding.FragmentLoginBinding
-
 import com.example.mobprog_tk2.R
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.mobprog_tk2.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
@@ -74,8 +70,6 @@ class LoginFragment : Fragment() {
                     showLoginFailed(it)
                 }
                 loginResult.success?.let {
-                    // updateUiWithUser(it)
-
                     // Set Logout visibility
                     val mainActivity = requireActivity() as MainActivity
                     val logoutButton = mainActivity.findViewById<Button>(R.id.LogoutButton)

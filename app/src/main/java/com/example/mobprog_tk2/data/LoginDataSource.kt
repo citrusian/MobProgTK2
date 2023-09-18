@@ -12,7 +12,7 @@ import java.security.KeyStore
  */
 
 class LoginDataSource {
-    private val cryptoManager = CryptoManager() // Instantiate CryptoManager
+    private val cryptoManager = CryptoManager()
 
     // Simulated hashed username and password from credential server
     private val storedUsernameHash = CryptoManager.hashPassword("pengguna")

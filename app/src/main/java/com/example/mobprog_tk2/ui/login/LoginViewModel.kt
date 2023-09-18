@@ -1,14 +1,12 @@
 package com.example.mobprog_tk2.ui.login
 
+import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Patterns
+import com.example.mobprog_tk2.R
 import com.example.mobprog_tk2.data.LoginRepository
 import com.example.mobprog_tk2.data.Result
-
-import com.example.mobprog_tk2.R
-import java.security.KeyStore
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
@@ -42,8 +40,6 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     // Username Validation
     private fun isUserNameValid(username: String): Boolean {
-//        val specialCharacters = [^aA-zZ]
-//        val specialCharacters = intArrayOf("^", "a"-"z")
         val specialCharacters = Regex("[^a-zA-Z]")
         return if (specialCharacters.containsMatchIn(username)) {
             Patterns.EMAIL_ADDRESS.matcher(username).matches()
@@ -54,13 +50,7 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     // Password Validation
     private fun isPasswordValid(password: String): Boolean {
-        val specialCharacters = Regex("[^a-zA-Z]")
-//        return if (specialCharacters.containsMatchIn(password)) {
-//            Patterns.EMAIL_ADDRESS.matcher(password).matches()
-//        } else {
-//            return password.length > 3
-//        }
-        // Regex sometimes needed in password
+        // Regex filter not used, more symbol === harder password
         return password.length > 3
     }
 }

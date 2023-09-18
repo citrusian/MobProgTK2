@@ -1,9 +1,7 @@
 package com.example.mobprog_tk2.data
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.example.mobprog_tk2.data.model.LoggedInUser
-import java.security.KeyStore
 
 /**
  * Class that requests authentication and user information from the remote data source and
